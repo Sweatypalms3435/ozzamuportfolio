@@ -1,0 +1,227 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Raleway', sans-serif;
+    font-weight: 300;
+    list-style: 1.3;
+    background: url(/images/footprints.png);
+}
+
+h1,h2,h3 p{
+    margin: 0%;
+}
+
+//flex
+.flex{
+    display: flex;
+
+    &-jc-c{
+        justify-content: center;
+    }
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+
+    &-wrap{
+        flex-wrap: wrap;
+    }
+
+    &-gap{
+        gap: 1em;
+    }
+}   
+
+.max-width{
+    max-width: 97rem;
+}
+
+//grid
+.grid{
+    display: grid;
+    grid-template-columns: 170px 250px auto auto auto;
+    padding: 1rem;
+
+    @media (max-width: 63.9375em){
+        display: block;
+        grid-template-columns: 0 0 0 0 0;
+    }
+
+    //info,contacts
+    &-icon{
+     grid-column: 1 / 2;
+     text-align: center;
+     align-self: center;
+
+    img{
+        height: 9.375rem;
+        border-radius: 50%;
+
+        @media (max-width: 63.9375em){
+           height: 6.25em;
+        }
+       }    
+    }
+
+    &-name{
+        grid-column: 2 / 3;
+        text-align: center;
+        align-self: center;
+        h1{
+            font-size: 2.8125em;
+            letter-spacing: 0.2em;
+            font-weight: 800;
+            color: $textgrey;
+
+            @media (max-width: 63.9375em){
+                font-size: 1.6875em;
+             }
+        }
+
+        p{
+            font-size: 1.125em;
+            color: $textgrey;
+
+            @media (max-width: 63.9375em){
+                font-size: 1em;
+             }
+        }
+
+    }
+
+
+    &-socials{
+       text-align: center;
+       align-self: center;
+       grid-column: 3 / 5;
+       font-size: 2em;
+       align-self: center;
+       justify-self: center;
+       @media (max-width: 63.9375em){
+        font-size: 1.5em;
+     }
+
+       a{
+        justify-content: center;
+        position: relative;
+        letter-spacing: 1em;
+        color: $headercolor;  
+        transition: color 300ms ease-in-out;
+
+        &:hover{
+            color: $support;
+        }
+       }
+    }
+
+    &-email{
+        position: relative;
+        text-align: center;
+        align-self: center;
+        grid-column: 5 / 6;  
+        @media (max-width: 63.9375em){
+            font-size: 0.8em;
+         }
+    }
+}
+
+.button{
+    display: flex;
+    gap: 0.3rem ;
+    flex-wrap: wrap;    
+    flex-shrink: 1;
+    justify-content: center;
+    max-width: 30rem;
+    margin-bottom: 1rem;
+
+    a{
+        padding: 0.5em;
+        text-decoration: none;
+        color: $textgrey;
+        justify-self: center;
+
+        
+    }
+}
+ .buttonitems{
+    justify-content: center;
+    display: flex;
+    width: 12rem;
+    border-style: solid;
+    border-radius: 5% ; 
+    border-color: $headercolor;
+    transition: border-color 300ms ease-in-out;
+
+    &:hover{
+        color:$support;
+         border-color:$support;
+     }
+
+ }
+
+ .hide-destop{
+    @media (min-width: 63.9375em){
+        display: none;
+     }
+ }
+
+ .no-overlay{
+     margin-top: 4.375rem;
+ }
+
+ .pic{
+     
+    img{
+        border-radius: 1.5625rem;
+        height: 25rem;
+        transition: height 300ms ease-in-out;
+        &:hover{
+            height: 26rem;
+        }
+        @media (max-width: 45rem){
+            height: 12.5rem;
+            
+            &:hover{
+                height: 13.5rem
+            }
+         }
+    }
+     
+ }
+
+ .width{
+     padding: 1em;
+     background-color: rgba(212, 205, 205, 0.2);
+     max-width: 97rem;
+ }
+
+//keyframes
+@keyframes transition-in {
+
+    from{
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    
+    to{
+        opacity: 1;
+        transform: rotateX(0);  
+    }
+}
+div, section, header{
+    animation: transition-in 2s;
+}  

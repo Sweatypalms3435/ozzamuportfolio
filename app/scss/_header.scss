@@ -1,0 +1,58 @@
+.header{
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color: $headercolor;
+    z-index: 1;
+
+    nav{
+    padding: 1em;    
+    max-width: 97rem;
+    }
+
+    &__logo{
+        img{
+            height: 30px;
+        }
+    }
+
+    &__categories{
+        a{
+            position: relative;
+            text-decoration: none;
+            color: $LightGrayishBlue;
+            font-weight: 600;
+            transition: color 300ms ease-in-out;
+
+            @media (max-width: 63.9375em){
+                display: none;
+             }
+
+            &:not(last child){
+                margin-right: 1rem;
+            }
+           
+
+            &::before{
+                content: "";
+                display: block;
+                position: absolute;
+                height: 0.4em;
+                left: 0;
+                right: 0;
+                bottom: -1.5em;
+                background: linear-gradient(to right, $dilutedred, $reddark);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+
+            &:hover{
+             color:$support;
+
+             &::before{
+                 opacity: 1;
+             }
+            } 
+        }
+    }
+}
